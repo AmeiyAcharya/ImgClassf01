@@ -1,0 +1,60 @@
+# List of Methods ( new python functions learnt via this project)
+
+1. os.listdir(DirectoryName) : this method uses the os library and the listdir method in it to return all the files and folders stored in that directory
+
+2. os.listdir(os.path.join(DirectoryName,'SubDirectoryName')) : DirectoryName actually corresponds to the file system path up till then and the SubDirectoryName that we specify in the '' is what we need to attach to the existing file path. this method basically adds the '/' that we see whne we move into the next directory within an existing directory
+
+3. cv2.imread : The function imread loads an image from the specified file and returns it. If the image cannot be read (because of missing file, improper permissions, unsupported or invalid format), the function returns an empty matrix. note that the imread function takes the img path as an argument
+
+4. imghdr.what : Tests the image data contained in the file named by filepath, and returns a string describing the image type.
+
+misc: If optional h is provided, the file argument is ignored and h is assumed to contain the byte stream to test.
+
+5. try and exception
+
+6. plt.imshow() : To display an image using opencv cv2 library, you can use cv2.imshow() function.
+
+7. cv2.cvtColor() : Converts an image from one color space to another.
+
+   arguments it takes are : Inputimg - in the form of array , Output image img, COLOR_FromtoWhat
+
+8. tf.data.Dataset?? : The `tf.data.Dataset` API supports writing descriptive and efficient input pipelines.`Dataset` usage follows a common pattern:
+
+   1. Create a source dataset from your input data.
+   1. Apply dataset transformations to preprocess the data.
+   1. Iterate over the dataset and process the elements.
+
+   Iteration happens in a streaming fashion, so the full dataset does not need to
+   fit into memory.
+
+9. Dealing with the hidden folders via os functions and then applying it:
+
+Check the directories present in your folder using this code, this displays the names of all directories in that folder. This code displays all directories even though it is hidden.
+
+          import os
+          dir = os.listdir('path_to_your_main_directory')
+          print(dir)
+
+Now, after you know the name of the unwanted subdirectory, delete it by using the below code
+
+         file_path = ('path_to_your_main_directory/subdirectory_name')
+         os.rmdir(file_path)
+
+    NOTE: os.rmdir() is for removing empty directories
+          os.remove() is to delete an individual file
+
+          remember both use filepath as arguments
+
+10. tf.keras.utils.image_dataset_from_directory(): Generates a tf.data.Dataset from image files in a directory.
+
+11. data.as_numpy_iterator() : A as_numpy_iterator() function returns an iterator which converts all elements of the dataset to numpy
+
+    NOTE: an iterator is an object that allows you to iterate over collections of data, such as lists, tuples, dictionaries, and sets. Python iterators implement the iterator design pattern, which allows you to traverse a container and access its elements.
+
+12. data_iterator.next() : basically the .next function is applied to the batches formed so that we can move to the next batch if required
+
+13. data.map() : is a function that allows us to make a transformation in our image much faster within the data pipeline itself
+
+14. .take() and .skip() methods: these are tf functions used to help create the dataset sizes for the train val and test sets.
+
+the take function basically tells what batch size / set to take from the overall data and the skip function tells it which ones to skip so there is no overlapp of data.
