@@ -2,6 +2,8 @@
 
 This project focuses on classifying images as either happy or sad using deep learning techniques. The code provided utilizes the TensorFlow library in Python to build and train a convolutional neural network (CNN) model for image classification. 
 
+**Do go through the MethodsLearnt file to check out some documentation-level explanations!!**
+
 ## Table of Contents
 1. [Load Data and Setup](#load-data-and-setup)
 2. [Preprocessing](#preprocessing)
